@@ -7,6 +7,7 @@ class InputForm extends Component {
     city: "",
     state: "",
     mobile: "",
+    gender:"",
   };
   printData = (e) => {
     const { value, name } = e.target;
@@ -15,7 +16,7 @@ class InputForm extends Component {
     });
   };
   render() {
-    const { name, city, state, mobile } = this.state;
+    const { name, city, state, mobile,gender } = this.state;
     return (
       <>
         <form action="">
@@ -55,12 +56,28 @@ class InputForm extends Component {
           />
           <br />
           <br />
+          <label htmlFor="">Gender :</label>
+          <label htmlFor="">Male</label>
+          <input
+            type="radio"
+            value={"Male"}
+            name="gender"
+            onChange={this.printData}
+          />
+          <label htmlFor="">Female</label>
+          <input
+            type="radio"
+            value={"Female"}
+            name="gender"
+            onChange={this.printData}
+          />
         </form>
-        <div>
+        <div style={{border:"1px solid black", margin:"30px",backgroundColor:"skyblue"}}>
           <p className="para">Name:{name}</p>
           <p className="para">City:{city}</p>
           <p className="para">State:{state}</p>
           <p className="para">Mobile:{mobile}</p>
+          <p className="para">Gender:{gender}</p>
         </div>
       </>
     );
