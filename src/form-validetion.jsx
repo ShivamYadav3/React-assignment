@@ -108,7 +108,6 @@ class FormValidation extends Component {
               onChange={this.CheckField}
             />
             {UserNameErr && <div className="error">Enter UserName</div>}
-            
           </div>
           <FlexDiv>
             <div className="">
