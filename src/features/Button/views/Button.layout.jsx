@@ -18,12 +18,16 @@ const Button = () => {
         <br />
         <br />
         <div>
-          <ButtonStyle block background="blue">
+          <ButtonStyle block lg>
             {Input}
           </ButtonStyle>
           <ButtonStyle active>{Input}</ButtonStyle>
-          <ButtonStyle color="blue">{Input}</ButtonStyle>
-          <ButtonStyle outline>{Input}</ButtonStyle>
+          <ButtonStyle color="blue" primary>
+            {Input}
+          </ButtonStyle>
+          <ButtonStyle outline sm>
+            {Input}
+          </ButtonStyle>
         </div>
         <ButtonBody />
       </div>

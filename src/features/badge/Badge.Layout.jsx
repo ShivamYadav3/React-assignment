@@ -17,7 +17,9 @@ const Badge = () => {
         <br />
         <br />
         <div>
-          <BadgeStyle color="black">{Input}</BadgeStyle>
+          <BadgeStyle color="black" primary>
+            {Input}
+          </BadgeStyle>
           <BadgeStyle Pill background="aqua">
             {Input}
           </BadgeStyle>
