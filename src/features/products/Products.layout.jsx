@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import FetchItem from "./FetchItem";
-import { MainDiv } from "./styled";
+import FetchItem from "./views/Product.Layout";
+import { MainDiv } from "./Product.style";
 
-function FetchApi() {
+function Products() {
   const [user, setUser] = useState([]);
 
   const fetchData = () => {
@@ -17,9 +17,9 @@ function FetchApi() {
   return (
     <MainDiv>
       {user.map((data, index) => {
-        return <FetchItem key={data.id} item={data} />;
+        return <FetchItem key={data.id} {...data} />;
       })}
     </MainDiv>
   );
 }
-export default FetchApi;
+export default Products;

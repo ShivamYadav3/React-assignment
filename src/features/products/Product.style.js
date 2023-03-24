@@ -22,5 +22,5 @@ export const Img=styled.img`
 width:300px;
 height:300px`
 
-export const TitleDiv=styled.div`
+export const TitleTextContainer=styled.div`
 height:20px`
