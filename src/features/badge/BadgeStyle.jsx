@@ -12,7 +12,6 @@ const BadgeStyle = ({
   dark,
   sm,
   lg,
-  ...props
 }) => {
   const Click = {
     border: "1px solid black",
