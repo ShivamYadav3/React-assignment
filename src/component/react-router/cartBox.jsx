@@ -15,11 +15,14 @@ const CartBox = () => {
   const RemoveQuantity = (e) => {
     const Card = JSON.parse(localStorage.getItem("cart"));
     // let foundIndex = -1;
-
+    console.log(e.target.id);
+    console.log(meraProductId);
+    console.log(Card[0].id);
     for (let i = 0; i < Card.length; i++) {
       if (Card[i].id == meraProductId) {
         //     // foundIndex = i;
         //     // let okk = Card[i].qty
+        console.log(Card);
         //     Card[i]["qty"] - 1;
         //     // setList((prev) )=> [...prev, Card]);
         //     //  { ...Card[i], Card[i]["qty"]: Card[i].qty - 1};
@@ -31,6 +34,7 @@ const CartBox = () => {
       // // if (foundIndex !== -1) {
       // //   Card[foundIndex].qty--;
     }
+    // console.log(e);
     // localStorage.setItem("cart", JSON.stringify(Card));
     // alert("Removed to cart");
   };

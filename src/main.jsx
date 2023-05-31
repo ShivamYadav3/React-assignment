@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
-import "./index.css";
+// import "./index.css";
 // import InputForm from "./form";
 // import FormValidation from "./form-validetion";
 // import ToDoList from "./component/todoList";
@@ -13,6 +14,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProductList from "./component/react-router/product-list";
 import ProductDetails from "./component/react-router/productDetails";
 import CartBox from "./component/react-router/cartBox";
+import HomePage from "./component/Github Profile/homepage";
+import Profile from "./component/Github Profile/profile";
+import RepoDetail from "./component/Github Profile/reposDetail";
+import Following from "./component/Github Profile/following";
+import Followers from "./component/Github Profile/followers";
+import FormValidation from "./component/form/FormValidation";
 
 const router = createBrowserRouter([
   {
@@ -27,10 +34,31 @@ const router = createBrowserRouter([
     path: "product-details/:meraProductId",
     element: <ProductDetails />,
   },
+  // {
+  //   path: "/",
+  //   element: <HomePage />,
+  // },
+  // {
+  //   path: "profile/:id",
+  //   element: <Profile />,
+  // },
+  // {
+  //   path: "/reposDetail/:id/:Detail",
+  //   element: <RepoDetail />,
+  // },
+  // {
+  //   path: "/following/:id",
+  //   element: <Following />,
+  // },
+  // {
+  //   path: "/followers/:id",
+  //   element: <Followers />,
+  // },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
-    <RouterProvider router={router} />
+    {/* <RouterProvider router={router} /> */}
+    <FormValidation />
   </>
 );

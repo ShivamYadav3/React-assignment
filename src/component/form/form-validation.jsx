@@ -144,4 +144,4 @@ class FormValidation extends Component {
     );
   }
 }
-export default FormValidation;
+// export default FormValidation;
