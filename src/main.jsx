@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
-// import "./index.css";
+import "./index.css";
 // import InputForm from "./form";
 // import FormValidation from "./form-validetion";
 // import ToDoList from "./component/todoList";
@@ -20,6 +20,15 @@ import RepoDetail from "./component/Github Profile/reposDetail";
 import Following from "./component/Github Profile/following";
 import Followers from "./component/Github Profile/followers";
 import FormValidation from "./component/form/FormValidation";
+import StopWatchByMe from "./component/To Do/toDoListBasic";
+import Maiin from "./component/react-router/maiin";
+import StopWatch5 from "./component/Stope Watch/StopWatch";
+import ToDoMain from "./component/prectice/ToDo";
+import StopWatch6 from "./component/prectice/stopWatch";
+import Calculator from "./component/prectice/calculator";
+import Otp from "./component/prectice/ref/otp";
+import ForwardRefExample from "./component/prectice/ForwardRef/ForwardRefExample";
+import Parent from "./component/prectice/context/parent";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +68,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
     {/* <RouterProvider router={router} /> */}
-    <FormValidation />
+    <Maiin />
   </>
 );

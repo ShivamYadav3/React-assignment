@@ -1,42 +1,42 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
 
 const CartBox = () => {
   const [list, setList] = useState([]);
-  const { meraProductId } = useParams();
-  const [update, setUpdate] = useState([]);
 
   useEffect(() => {
-    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartItems = JSON.parse(localStorage.getItem("cart"));
     setList(cartItems);
   }, []);
 
-  const RemoveQuantity = (e) => {
-    const Card = JSON.parse(localStorage.getItem("cart"));
-    // let foundIndex = -1;
-    console.log(e.target.id);
-    console.log(meraProductId);
-    console.log(Card[0].id);
+  const RemoveQuantity = (data) => {
+    const Card = [...list];
     for (let i = 0; i < Card.length; i++) {
-      if (Card[i].id == meraProductId) {
-        //     // foundIndex = i;
-        //     // let okk = Card[i].qty
-        console.log(Card);
-        //     Card[i]["qty"] - 1;
-        //     // setList((prev) )=> [...prev, Card]);
-        //     //  { ...Card[i], Card[i]["qty"]: Card[i].qty - 1};
-        //     setList(Card);
-        //     // break;
-        //     // return { ...Card[i], qty: Card[i].qty - 1 };
-        //   }
+      if (Card[i].id == data) {
+        console.log(Card[i]);
+        Card[i]["qty"] = Card[i]["qty"] - 1;
+        console.log(Card[i]);
+        setList(Card);
+        localStorage.setItem("cart", JSON.stringify(Card));
       }
-      // // if (foundIndex !== -1) {
-      // //   Card[foundIndex].qty--;
+      if (Card[i].qty < 1) {
+        Card.splice(i, 1);
+        setList(Card);
+        localStorage.setItem("cart", JSON.stringify(Card));
+      }
     }
-    // console.log(e);
-    // localStorage.setItem("cart", JSON.stringify(Card));
-    // alert("Removed to cart");
+  };
+
+  const AddQuantity = (data) => {
+    const Card = JSON.parse(localStorage.getItem("cart"));
+    for (let i = 0; i < Card.length; i++) {
+      if (Card[i].id == data) {
+        console.log(Card[i]);
+        Card[i]["qty"] = Card[i]["qty"] + 1;
+        setList(Card);
+        localStorage.setItem("cart", JSON.stringify(Card));
+      }
+    }
   };
 
   return (
@@ -59,15 +59,21 @@ const CartBox = () => {
 
       <div className="flex flex-col gap-y-5">
         {list.map((data, index) => {
+          console.log(data.id);
           return (
-            <div key={index} className="flex justify-around items-center">
+            <div key={data.id} className="flex justify-around items-center">
               <div className="w-64 inline-block">{data.title}</div>
               <div className="w-60 inline-block text-center">
-                <button className="w-12 bg-slate-300 mr-8 rounded-md">+</button>
+                <button
+                  className="w-12 bg-slate-300 mr-8 rounded-md"
+                  onClick={() => AddQuantity(data.id)}
+                >
+                  +
+                </button>
                 <span>{data.qty}</span>
                 <button
                   className="w-12 bg-slate-300 ml-8 rounded-md"
-                  onClick={RemoveQuantity}
+                  onClick={() => RemoveQuantity(data.id)}
                 >
                   -
                 </button>
