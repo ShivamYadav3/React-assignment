@@ -17,7 +17,8 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
     "reactstrap": "^9.1.10",
-    "styled-components": "^5.3.9"
+    "styled-components": "^5.3.9",
+    "wysiwyg": "^2.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",

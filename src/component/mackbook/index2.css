@@ -1,0 +1,69 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.background {
+  background-image: url("./img/img1.png");
+  height: 100vh;
+}
+.menuBar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  height: 240px;
+  top: 290px;
+  left: 520px;
+  padding: 16px;
+  border: 1px solid black;
+  border-radius: 24px;
+  color: #ffffff;
+  gap: 20px;
+}
+.menuHead {
+  display: flex;
+  height: 30px;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+}
+.flex {
+  display: flex;
+  gap: 25px;
+  height: 50px;
+  align-items: center;
+  border-radius: 20px;
+  padding-left: 10px;
+}
+
+.cut {
+  width: 20px;
+  border: 1px solid #ffffff;
+}
+.cut1 {
+  rotate: 45deg;
+  position: relative;
+  top: 2px;
+}
+.cut2 {
+  rotate: -45deg;
+}
+.noti {
+  background: linear-gradient(
+    90.87deg,
+    rgba(255, 255, 255, 0.16) 0.51%,
+    rgba(255, 255, 255, 0) 140.26%
+  );
+}
+.animation {
+  animation-name: ani;
+  animation-duration: 1s;
+}
+@keyframes ani {
+  0% {
+    top: 290px;
+  }
+  100% {
+    top: 800px;
+  }
+}

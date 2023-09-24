@@ -29,20 +29,33 @@ import Calculator from "./component/prectice/calculator";
 import Otp from "./component/prectice/ref/otp";
 import ForwardRefExample from "./component/prectice/ForwardRef/ForwardRefExample";
 import Parent from "./component/prectice/context/parent";
+// import Home from "./component/mackbook/Home";
+// import Standings from "./component/match/Standings";
+import Registration from "./component/task/Registration";
+import EmployeeList from "./component/task/EmployeeList";
+import EditEmployee from "./component/task/EditEmployee";
+import SearchFunction from "./component/task/SearchFunction";
+import ShopKart from "./component/task2/ShopKart";
+// import EditEmployee from "./component/task/editEmployee";
+// import Home from "./IP/RPS/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ProductList />,
+    element: <Registration />,
   },
   {
-    path: "cart",
-    element: <CartBox />,
+    path: "/editEmployee/:id",
+    element: <EditEmployee />,
   },
   {
-    path: "product-details/:meraProductId",
-    element: <ProductDetails />,
+    path: "/employeeList",
+    element: <EmployeeList />,
   },
+  // {
+  //   path: "product-details/:meraProductId",
+  //   element: <ProductDetails />,
+  // },
   // {
   //   path: "/",
   //   element: <HomePage />,
@@ -68,6 +81,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
     {/* <RouterProvider router={router} /> */}
-    <Maiin />
+    <ShopKart />
   </>
 );

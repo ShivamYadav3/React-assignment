@@ -1,0 +1,38 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+}
+.container{
+    color: #ffff;
+    width: 390px;
+    background: #161616;
+    display: flex;
+    flex-direction: column;  
+}
+.head1{ 
+    text-align: center;
+}
+.side-icon{
+    display: flex;
+}
+.side-body-ic{
+    display:  flex;
+    gap: 10px;
+}
+.body{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.body-1{
+    display: flex;
+    justify-content: space-between;
+}
+.body-2{
+    display: flex;
+    justify-content: space-between;
+}
+.body-3{
+    display: flex;
+    justify-content: space-between;
+}
