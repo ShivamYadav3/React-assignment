@@ -92,7 +92,7 @@ const CartBox = () => {
       </div>
       <br />
       <div className="ml-20 font-extrabold text-lg">
-        Total Amount To Pay :
+        Total Amount To Pay :{" "}
         {list.reduce((Total, data) => Total + data.price * data.qty, 0)}
       </div>
     </div>

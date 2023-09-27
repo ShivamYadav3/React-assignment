@@ -3,15 +3,20 @@ import { Link } from "react-router-dom";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
-    fetch(`https://dummyjson.com/products`)
+    fetch(`https://dummyjson.com/products?limit=10&skip=${page * 10 - 10}`)
       .then((data) => data.json())
       .then((data) => {
-        console.table(data.products);
+        console.log(data.total);
         setProducts(data.products);
       });
-  }, []);
+  }, [page]);
+
+  const handlePage = (num) => {
+    return setPage((prev) => prev + num);
+  };
 
   return (
     <div className="flex flex-col gap-y-5">
@@ -48,6 +53,46 @@ const ProductList = () => {
             </Link>
           );
         })}
+      </div>
+      <div className="flex justify-center my-7">
+        <button
+          className={`bg-slate-300 rounded-sm p-2 ml-4 px-3${
+            page <= 1 ? " hidden" : ""
+          }`}
+          onClick={() => handlePage(-1)}
+        >
+          Prev
+        </button>
+        {page === 1 && (
+          <button className="bg-slate-300 rounded-sm p-2 ml-4 px-3 opacity-50 cursor-not-allowed ">
+            next
+          </button>
+        )}
+
+        {Array.from({ length: 10 }).map((data, i) => {
+          return (
+            <button
+              className="p-2 ml-4 px-3 bg-slate-300 rounded-sm"
+              onClick={() => setPage(i + 1)}
+            >
+              {i + 1}
+            </button>
+          );
+        })}
+
+        <button
+          className={`bg-slate-300 rounded-sm p-2 ml-4 px-3 ${
+            page == 10 ? " hidden" : ""
+          }`}
+          onClick={() => handlePage(1)}
+        >
+          next
+        </button>
+        {page === 10 && (
+          <button className="bg-slate-300 rounded-sm p-2 ml-4 px-3 opacity-50 cursor-not-allowed ">
+            next
+          </button>
+        )}
       </div>
     </div>
   );
