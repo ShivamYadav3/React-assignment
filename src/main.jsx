@@ -26,7 +26,7 @@ import StopWatch5 from "./component/Stope Watch/StopWatch";
 import ToDoMain from "./component/prectice/ToDo";
 import StopWatch6 from "./component/prectice/stopWatch";
 import Calculator from "./component/prectice/calculator";
-import Otp from "./component/prectice/ref/otp";
+// import Otp from "./component/prectice/ref/otp";
 import ForwardRefExample from "./component/prectice/ForwardRef/ForwardRefExample";
 import Parent from "./component/prectice/context/parent";
 // import Home from "./component/mackbook/Home";
@@ -36,6 +36,8 @@ import EmployeeList from "./component/task/EmployeeList";
 import EditEmployee from "./component/task/EditEmployee";
 import SearchFunction from "./component/task/SearchFunction";
 import ShopKart from "./component/task2/ShopKart";
+import Weather from "./IP/app/weather";
+import Otp from "./IP/OTP/otp";
 // import EditEmployee from "./component/task/editEmployee";
 // import Home from "./IP/RPS/Home";
 
@@ -81,6 +83,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
     {/* <RouterProvider router={router} /> */}
-    <Maiin />
+    <Otp />
   </>
 );
