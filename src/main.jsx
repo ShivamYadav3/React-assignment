@@ -38,6 +38,11 @@ import SearchFunction from "./component/task/SearchFunction";
 import ShopKart from "./component/task2/ShopKart";
 import Weather from "./IP/app/weather";
 import Otp from "./IP/OTP/otp";
+import Otp2 from "./IP/OTP/otp2";
+import ImageSlider from "./features/slider/imageSlider";
+import OTPApp from "./IP/OTP/otpApp";
+import DynamicOtpInput from "./IP/OTP/bard";
+import Otp3 from "./IP/OTP/otp3";
 // import EditEmployee from "./component/task/editEmployee";
 // import Home from "./IP/RPS/Home";
 
@@ -83,6 +88,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
     {/* <RouterProvider router={router} /> */}
-    <Otp />
+    <Otp3 />
   </>
 );

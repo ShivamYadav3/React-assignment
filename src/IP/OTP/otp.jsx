@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 const Otp = () => {
   const [inputField, setInputField] = useState(4);
@@ -7,16 +7,23 @@ const Otp = () => {
   const [type, setType] = useState("text");
   const [placeholder, setPlaceholder] = useState(Array(inputField).fill(""));
   const arr = Array.from({ length: inputField });
+  console.log(value, arr);
+  const inputRefs = useRef(Array(inputField).fill(null));
 
   const ChangeInput = (e, i) => {
     const updatedValue = [...value];
     updatedValue[i] = e.target.value;
     setValue(updatedValue);
+    if (e.target.value && i < arr.length - 1 && e.key !== "Backspace") {
+      inputRefs.current[i + 1].focus();
+      return;
+    }
+  };
 
-    if (e.target.value && i < arr.length - 1) {
-      document.getElementById(`input-${i + 1}`).focus();
-    } else if (!e.target.value && i > 0) {
-      document.getElementById(`input-${i - 1}`).focus();
+  const focusChanger = (e, i) => {
+    if (e.key === "Backspace" && !e.target.value && i > 0) {
+      inputRefs.current[i - 1].focus();
+      inputRefs.current[i - 1].select();
     }
   };
 
@@ -62,6 +69,7 @@ const Otp = () => {
             <input
               type="text"
               className="border px-5 outline-none h-6 py-2"
+              maxLength={inputField}
               value={value.join("")}
               onChange={(e) => setValue(Array.from(e.target.value))}
             />
@@ -73,6 +81,7 @@ const Otp = () => {
             <input
               type="text"
               className="border px-5 outline-none h-6 py-2"
+              maxLength={inputField}
               value={placeholder.join("")}
               onChange={(e) => setPlaceholder(Array.from(e.target.value))}
             />
@@ -84,7 +93,7 @@ const Otp = () => {
             <select
               name="type"
               id="type"
-              className="border px-5 outline-none h-6 py-2 text-black"
+              className="border px-5 outline-none h-8 py-1"
               value={type}
               onChange={(e) => setType(e.target.value)}
             >
@@ -105,13 +114,15 @@ const Otp = () => {
                 <div>
                   <input
                     type={type}
-                    id={`input-${i}`}
+                    // id={`input-${i}`}
                     className="border-2 w-8 h-8 rounded-md text-center outline-none"
                     value={value[i]}
                     maxLength={1}
                     placeholder={placeholder[i]}
                     autoFocus={i === 0}
                     onChange={(e) => ChangeInput(e, i)}
+                    onKeyDown={(e) => focusChanger(e, i)}
+                    ref={(inputRef) => (inputRefs.current[i] = inputRef)}
                   />
                 </div>
                 {i < arr.length - 1 && <div>{separator}</div>}
