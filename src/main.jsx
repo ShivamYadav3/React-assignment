@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 // import "bootstrap/dist/css/bootstrap.min.css";
-import App from "./App";
+// import App from "./App";
 import "./index.css";
 // import InputForm from "./form";
 // import FormValidation from "./form-validetion";
@@ -43,6 +43,7 @@ import ImageSlider from "./features/slider/imageSlider";
 import OTPApp from "./IP/OTP/otpApp";
 import DynamicOtpInput from "./IP/OTP/bard";
 import Otp3 from "./IP/OTP/otp3";
+import App from "./unstop/App";
 // import EditEmployee from "./component/task/editEmployee";
 // import Home from "./IP/RPS/Home";
 
@@ -88,6 +89,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
     {/* <RouterProvider router={router} /> */}
-    <Otp3 />
+    {/* <Otp3 /> */}
+    <App />
   </>
 );
