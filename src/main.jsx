@@ -6,8 +6,6 @@ import App from "./unstop/App";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
-    {/* <RouterProvider router={router} /> */}
-    {/* <Otp3 /> */}
     <App />
   </>
 );
