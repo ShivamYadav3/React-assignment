@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import mobilepic from "./images/mobile_screen_share.svg";
 import view_1 from "./images/view_agenda.svg";
 import view_2 from "./images/Frame 1000009353.svg";
@@ -10,6 +10,32 @@ import SideBar from "./sideBar";
 import DesktopBody from "./DesktopBody";
 
 const Desktop = ({ isMobileView, handleToggleView, showForm, toggleForm }) => {
+  const updateWindowWidth = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    updateWindowWidth(); // Set initial window width
+
+    const mediaQueryList = window.matchMedia("(max-width: 800px)");
+
+    const handleResize = (event) => {
+      updateWindowWidth();
+      if (event.matches) {
+        handleToggleView(false); // Switch to mobile view
+      } else {
+        handleToggleView(true); // Switch to desktop view
+      }
+    };
+
+    mediaQueryList.addEventListener("change", handleResize);
+
+    return () => {
+      mediaQueryList.removeEventListener("change", handleResize);
+    };
+  }, [handleToggleView]);
   return (
     <div>
       {!isMobileView && (
