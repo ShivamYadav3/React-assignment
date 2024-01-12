@@ -9,7 +9,7 @@ const NewAssessment = ({ showForm, toggleForm }) => {
         <div className="form-overlay">
           <div
             className="form-wrapper"
-            style={{ width: "370px", left: "37%", top: "8%" }}
+            style={{ width: "373px", left: "36%", top: "8%" }}
           >
             <form className="form-content">
               {/* Your form elements go here */}

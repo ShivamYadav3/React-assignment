@@ -9,7 +9,10 @@ import calender from "./images/calendar_today.svg";
 const DesktopBody = ({ toggleForm }) => {
   return (
     <div className="my-assessment">
-      <div onClick={() => toggleForm()} className="my-assess-items item1">
+      <div
+        onClick={() => toggleForm()}
+        className="my-assess-items item1  box22"
+      >
         <div className="img-con">
           <img src={plus}></img>
         </div>
@@ -19,7 +22,7 @@ const DesktopBody = ({ toggleForm }) => {
           subjective(text or paragraph)!
         </p>
       </div>
-      <div className="my-assess-items item2">
+      <div className="my-assess-items item2 box22">
         <div className="end-items">
           <img src={bag}></img>
           <img src={dot}></img>

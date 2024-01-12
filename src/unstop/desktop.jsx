@@ -31,10 +31,12 @@ const Desktop = ({ isMobileView, handleToggleView, showForm, toggleForm }) => {
               </div>
               <p className="ass_over">Assessment Overview</p>
               <div className="assessment_overview">
-                <div className="over1">
+                <div className="over1 box20">
                   <p>Total Assessments</p>
                   <div className="tiny1">
-                    <img src={view_1} />
+                    <div>
+                      <img src={view_1} />
+                    </div>
                     <p>34</p>
                   </div>
                 </div>
@@ -88,7 +90,7 @@ const Desktop = ({ isMobileView, handleToggleView, showForm, toggleForm }) => {
                   </div>
                 </div>
 
-                <div className="over4">
+                <div className="over4 box21">
                   <p>Total Purpose</p>
                   <div className="tiny4">
                     <img src={view_4} />

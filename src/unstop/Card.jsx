@@ -7,7 +7,7 @@ import "./app.css";
 
 const Card = () => {
   return (
-    <div className="my-assess-items item3">
+    <div className="my-assess-items item3 box22">
       <div className="end-items">
         <img src={bag}></img>
         <img src={dot}></img>
