@@ -19,6 +19,10 @@ const Desktop = ({ isMobileView, handleToggleView, showForm, toggleForm }) => {
   useEffect(() => {
     updateWindowWidth(); // Set initial window width
 
+    if (windowWidth < 800) {
+      handleToggleView();
+    }
+
     const mediaQueryList = window.matchMedia("(max-width: 800px)");
 
     const handleResize = (event) => {
